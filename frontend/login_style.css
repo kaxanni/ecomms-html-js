@@ -1,0 +1,101 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e5e5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #b59de4; /* Violet background matching the theme */
+}
+
+/* Login box */
+.login-box {
+    background-color: #9ee1f3; /* Light blue background */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 30px;
+    color: #4b0082; /* Darker text color for contrast */
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4b0082;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ece8f6; /* Light violet input fields */
+    color: black;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #b59de4;
+}
+
+/* Submit button */
+.input-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #b59de4; /* Violet button */
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+    background-color: #a58bd2;
+}
+
+/* Signup link */
+.signup-link {
+    margin-top: 15px;
+    color: #4b0082;
+}
+
+.signup-link a {
+    color: #4b0082;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

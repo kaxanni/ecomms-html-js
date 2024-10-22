@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Page</title>
+    <link rel="stylesheet" href="styles/profile_cus.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <h2>User Name</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="customer_home.html">Home</a></li>
+                    <li><a href="customer_shop.html">Shop</a></li>
+                    <li><a href="customer_wish.html">Wishlist</a></li>
+                    <li><a href="customer_cart.html">Cart</a></li>
+                    <li><a href="#" class="active">Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content encapsulated in the violet box -->
+        <div class="main-wrapper">
+            <div class="logout">
+                <button onclick="window.location.href='../login_page.html'">Logout</button>
+            </div>
+            
+            <!-- My Purchase Section -->
+            <div class="purchase-section">
+                <div class="purchase-header">
+                    <h3>My Purchase</h3>
+                </div>
+                <div class="purchase-grid">
+                    <div class="purchase-item">To Pay</div>
+                    <div class="purchase-item">To Ship</div>
+                    <div class="purchase-item">To Receive</div>
+                    <div class="purchase-item">To Rate</div>
+                </div>
+            </div>
+
+            <!-- Payment Method and Address section -->
+            <div class="info-section">
+                <div class="info-box">
+                    <h3>Payment Method</h3>
+                </div>
+                <div class="info-box">
+                    <h3>Address/es</h3>
+                </div>
+            </div>
+
+            <!-- Transaction History Section -->
+            <div class="transaction-history">
+                <h3>Transaction History</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

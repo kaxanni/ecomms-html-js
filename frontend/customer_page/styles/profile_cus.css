@@ -1,0 +1,181 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e5e5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure body takes the full screen height */
+}
+
+/* Violet container encapsulating the blue content */
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #b59de4;
+    height: 100vh; /* Adjusted height for encapsulation */
+    width: 100vw; /* Set width to 90% of the viewport */
+    border-radius: 0px; /* Rounded corners for violet box */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #b59de4;
+    width: 20%; /* Sidebar takes 20% of the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-pic {
+    background-color: #ddd;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.sidebar h2 {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav {
+    width: 80%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text inside the buttons */
+    padding: 20px;
+    background-color: #ece8f6;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    width: 100%; /* Full width in the sidebar */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+nav ul li a.active {
+    background-color: #d4c4ff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #c3a6f0;
+}
+
+/* Main wrapper (blue container) */
+.main-wrapper {
+    width: 100%;
+    background-color: #9ee1f3;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logout Button */
+.logout {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.logout button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #b59de4;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout button:hover {
+    background-color: #a58bd2;
+}
+
+/* Purchase Section */
+.purchase-section {
+    background-color: #f7b2b2;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.purchase-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.purchase-item {
+    background-color: #d48c8c;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+    color: white;
+}
+
+.purchase-item:last-child {
+    margin-right: 0;
+}
+
+/* Info Section (Payment Method and Address) */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background-color: #ece8f6;
+    width: 48%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.info-box h3 {
+    text-align: center;
+}
+
+/* Transaction History Section */
+.transaction-history {
+    background-color: #ece8f6;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.transaction-history h3 {
+    text-align: center;
+}

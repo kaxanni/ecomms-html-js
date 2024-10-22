@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulated Design</title>
+    <link rel="stylesheet" href="styles/home_cus.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <h2>User Name</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="customer_shop.html">Shop</a></li>
+                    <li><a href="customer_wish.html">Wishlist</a></li>
+                    <li><a href="customer_cart.html">Cart</a></li>
+                    <li><a href="customer_profile.html">Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content encapsulated in the violet box -->
+        <div class="main-wrapper">
+            <div class="main-content">
+                <!-- Search bar -->
+                <div class="header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Hinted search text">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                    <div class="navbar">
+                        <a href="#">Season Sale</a>
+                        <a href="#">Promo</a>
+                        <a href="#">Men's</a>
+                        <a href="#">Women's</a>
+                    </div>
+                </div>
+
+                <!-- Featured products -->
+                <div class="featured">
+                    <div class="featured-product">
+                        Featured Products
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">PHOTOS product</div>
+                        <div class="product-item">PHOTOS product</div>
+                        <div class="product-item">PHOTOS product</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

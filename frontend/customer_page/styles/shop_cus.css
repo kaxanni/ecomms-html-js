@@ -1,0 +1,192 @@
+/* General styling for the shop page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e5e5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #b59de4;
+    height: 100vh; /* Adjusted height for encapsulation */
+    width: 100vw; /* Set width to 90% of the viewport */
+    border-radius: 0px; /* Rounded corners for violet box */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #b59de4;
+    width: 20%; /* Sidebar takes 20% of the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-pic {
+    background-color: #ddd;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.sidebar h2 {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav {
+    width: 80%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text inside the buttons */
+    padding: 20px;
+    background-color: #ece8f6;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    width: 100%; /* Full width in the sidebar */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+nav ul li a.active {
+    background-color: #d4c4ff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #c3a6f0;
+}
+
+/* Main wrapper (blue container) */
+.main-wrapper {
+    width: 100%; /* Main content takes 80% of the container */
+    display: flex;
+    flex-direction: column;
+    background-color: #9ee1f3; /* Light blue background */
+    border-radius: 30px;
+    padding: 30px; /* Add padding for better spacing */
+    box-sizing: border-box;   
+}
+
+/* Header (search bar) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 65%; /* Adjust width for the search bar */
+    justify-content: center; /* Align the search bar to the left */
+    margin-right: auto; /* Push the search bar to the left */
+}
+
+.search-bar input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #e0d4f9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Sort by section */
+.sort-by {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sort-by span {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.sort-options button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ece8f6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sort-options button:hover {
+    background-color: #c3a6f0;
+}
+
+/* Product grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    background-color: #ece8f6;
+    padding: 20px;
+    width: 30%;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.product-item h3 {
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 1em;
+}
