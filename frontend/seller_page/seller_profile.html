@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Profile Page</title>
+    <link rel="stylesheet" href="/seller_page/styles/seller_profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <h2>COMPANY NAME</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/seller_dashboard">Dashboard</a></li>
+                    <li><a href="/seller_order">Order</a></li>
+                    <li><a href="/seller_product">Products</a></li>
+                    <li><a href="/seller_profile" class="active">Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-wrapper">
+            <div class="logout">
+                <button onclick="window.location.href='/'">Logout</button>
+            </div>
+            <div class="profile-content">
+                <!-- Business Information Section -->
+                <div class="info-section">
+                    <h3>Business Owner Information and Business Information</h3>
+                </div>
+
+                <!-- Billing and Subscription Section -->
+                <div class="billing-subscription">
+                    <div class="billing-section">
+                        <h3>Billings and Payment</h3>
+                    </div>
+                    <div class="subscription-section">
+                        <h3>Website Subscription Plan</h3>
+                    </div>
+                </div>
+
+                <!-- Store Location Section -->
+                <div class="location-section">
+                    <h3>Store Location and Address</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
