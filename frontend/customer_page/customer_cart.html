@@ -21,6 +21,7 @@
                     <li><a href="customer_wish.html">Wishlist</a></li>
                     <li><a href="#" class="active">Cart</a></li>
                     <li><a href="customer_profile.html">Me</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -59,5 +60,19 @@
             </div>
         </div>
     </div>
+    <!-- Add this script just before the closing </body> tag -->
+<script>
+    // Grab all the buy buttons
+    const buyButtons = document.querySelectorAll('.buy-btn');
+
+    // Attach event listeners to each button
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Redirect to the invoice page when the button is clicked
+            window.location.href = 'customer_invoice.html';
+        });
+    });
+</script>
+
 </body>
 </html>

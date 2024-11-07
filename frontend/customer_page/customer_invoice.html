@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Invoice</title>
+    <link rel="stylesheet" href="styles/invoice_cus.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <h2>User Name</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="customer_home.html" class="sidebar-button">Home</a></li>
+                    <li><a href="customer_shop.html" class="sidebar-button">Shop</a></li>
+                    <li><a href="customer_wish.html" class="sidebar-button">Wishlist</a></li>
+                    <li><a href="customer_cart.html" class="sidebar-button">Cart</a></li>
+                    <li><a href="customer_profile.html" class="sidebar-button">Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content (invoice area) -->
+        <div class="main-wrapper">
+            <div class="invoice-content">
+                <h2>Invoice</h2>
+                <p><strong>Order #123456</strong><br>
+                Date: 08 November 2024</p>
+
+                <h3>Billing Details</h3>
+                <p>Name: <br>
+                Address: <br>
+                Email: </p>
+
+                <h3>Product Summary</h3>
+                <table>
+                    <tr><th>Product</th><th>Quantity</th><th>Price</th><th>Total</th></tr>
+                    <tr><td>Product Name 1</td><td>2</td><td>$</td><td>$</td></tr>
+                    <tr><td>Product Name 2</td><td>1</td><td>$</td><td>$</td></tr>
+                </table>
+
+                <p><strong>Total Amount</strong><br>
+                Subtotal: $<br>
+                Shipping: $<br>
+                Grand Total: $</p>
+
+                <button class="main-wrapper-button" onclick="window.print()">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

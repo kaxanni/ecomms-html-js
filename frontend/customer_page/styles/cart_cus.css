@@ -34,6 +34,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    
 }
 
 .profile {
@@ -62,6 +63,7 @@ nav ul {
     list-style-type: none;
     padding-left: 0;
     width: 100%;
+    
 }
 
 nav ul li {
@@ -94,12 +96,13 @@ nav ul li a:hover {
 
 /* Main wrapper (blue container) */
 .main-wrapper {
-    width: 100%;
-    background-color: #9ee1f3;
-    border-radius: 30px;
-    padding: 30px;
+    width: 100%; /* Main content takes   80% of the container */
     display: flex;
     flex-direction: column;
+    background-color: #9ee1f3; /* Light blue background */
+    border-radius: 30px;
+    padding: 30px; /* Add padding for better spacing */
+    box-sizing: border-box; 
 }
 
 /* Cart grid */
