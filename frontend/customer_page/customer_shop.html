@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/shop_cus.css">
 </head>
 <body>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -49,33 +51,40 @@
                     </div>
                 </div>
 
-                <!-- Product grid -->
-                <div class="product-grid">
-                    <div class="product-item">
-                        <div class="product-photo">Product Photo</div>
-                        <div class="product-info">
-                            <h3>Name</h3>
-                            <p>Details</p>
-                        </div>
+               <!-- Product grid -->
+               <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-photo">Product Photo</div>
+                    <div class="product-info">
+                        <h3>Name</h3>
+                        <p>Details</p>
                     </div>
-                    <div class="product-item">
-                        <div class="product-photo">Product Photo</div>
-                        <div class="product-info">
-                            <h3>Name</h3>
-                            <p>Details</p>
-                        </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-photo">Product Photo</div>
+                    <div class="product-info">
+                        <h3>Name</h3>
+                        <p>Details</p>
                     </div>
-                    <div class="product-item">
-                        <div class="product-photo">Product Photo</div>
-                        <div class="product-info">
-                            <h3>Name</h3>
-                            <p>Details</p>
-                        </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-photo">Product Photo</div>
+                    <div class="product-info">
+                        <h3>Name</h3>
+                        <p>Details</p>
                     </div>
-                    <!-- Add more product items as needed -->
+                </div>
+                <!-- Add more product items as needed -->
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('expanded');
+            document.querySelector('.main-wrapper').classList.toggle('shifted');
+        }
+    </script>
 </body>
 </html>

@@ -18,11 +18,10 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #b59de4;
-  height: 100vh; /* Adjusted height for encapsulation */
-  width: 100vw; /* Set width to 90% of the viewport */
-  border-radius: 0px; /* Rounded corners for violet box */
+  height: 100vh;
+  width: 100vw;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar {
@@ -46,14 +45,7 @@ body {
   border-radius: 50%;
   margin-bottom: 15px;
 }
-.sidebar {
-  background-color: #b59de4;
-  width: 20%; /* Sidebar takes 20% of the container */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-}
+
 nav {
   width: 80%;
 }
@@ -63,10 +55,12 @@ nav ul {
   padding-left: 0;
   width: 100%;
 }
+
 nav ul li a.active {
   background-color: #d4c4ff;
   font-weight: bold;
 }
+
 nav ul li a:hover {
   background-color: #c3a6f0;
 }
@@ -78,27 +72,26 @@ nav ul li {
 nav ul li a {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the text inside the buttons */
+  justify-content: center;
   padding: 20px;
   background-color: #ece8f6;
   color: black;
   text-decoration: none;
   border-radius: 15px;
   font-size: 1.2em;
-  width: 100%; /* Full width in the sidebar */
+  width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .main-wrapper {
-  width: 100%; /* Main content takes 80% of the container */
+  width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #9ee1f3; /* Light blue background */
+  background-color: #9ee1f3;
   border-radius: 30px;
-  padding: 30px; /* Add padding for better spacing */
-  box-sizing: border-box;  
-  justify-content: center;  
+  padding: 30px;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 .invoice-content {
@@ -119,7 +112,8 @@ nav ul li a {
   font-size: 1.3em;
 }
 
-.invoice-content p, .invoice-content table {
+.invoice-content p,
+.invoice-content table {
   margin: 10px 0;
 }
 
@@ -128,15 +122,18 @@ nav ul li a {
   border-collapse: collapse;
 }
 
-.invoice-content table th, .invoice-content table td {
+.invoice-content table th,
+.invoice-content table td {
   border-bottom: 1px solid #ccc;
   padding: 8px;
   text-align: left;
 }
+
 .sidebar h2 {
   color: white;
   font-size: 1.5em;
 }
+
 button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -150,3 +147,73 @@ button {
 button:hover {
   background-color: #a68cd0;
 }
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide sidebar off-screen */
+    width: 250px;
+    height: 100vh;
+    background-color: #b59de4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    transition: left 0.3s ease; /* Smooth sliding */
+    z-index: 1000;
+  }
+
+  .sidebar.expanded {
+    left: 0; /* Show the sidebar */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Make sure hamburger is on top of content */
+  }
+
+  .main-wrapper {
+    transition: margin-left 0.3s ease; /* Smooth transition for pushing the content */
+    width: 100%;
+  }
+
+  .main-wrapper.shifted {
+    margin-left: 250px; /* Push the content to the right when sidebar opens */
+  }
+
+  .invoice-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+    text-align: center;
+    padding: 15px;
+  }
+}
+

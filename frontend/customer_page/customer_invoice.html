@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Invoice</title>
     <link rel="stylesheet" href="styles/invoice_cus.css">
+    
 </head>
 <body>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -15,12 +17,12 @@
                 <h2>User Name</h2>
             </div>
             <nav>
-                <ul>
-                    <li><a href="customer_home.html" class="sidebar-button">Home</a></li>
-                    <li><a href="customer_shop.html" class="sidebar-button">Shop</a></li>
-                    <li><a href="customer_wish.html" class="sidebar-button">Wishlist</a></li>
-                    <li><a href="customer_cart.html" class="sidebar-button">Cart</a></li>
-                    <li><a href="customer_profile.html" class="sidebar-button">Me</a></li>
+                <ul class="nav-links">
+                    <li><a href="customer_home.html">Home</a></li>
+                    <li><a href="customer_shop.html">Shop</a></li>
+                    <li><a href="customer_wish.html">Wishlist</a></li>
+                    <li><a href="customer_cart.html">Cart</a></li>
+                    <li><a href="customer_profile.html">Me</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,5 +55,11 @@
             </div>
         </div>
     </div>
+    <script>
+      function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('expanded');
+    document.querySelector('.main-wrapper').classList.toggle('shifted');
+}
+    </script>
 </body>
 </html>

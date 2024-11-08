@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/profile_cus.css">
 </head>
 <body>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -60,5 +61,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('expanded');
+            document.querySelector('.main-wrapper').classList.toggle('shifted');
+        }
+    </script>
 </body>
 </html>

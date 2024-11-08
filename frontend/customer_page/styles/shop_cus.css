@@ -19,21 +19,21 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #b59de4;
-    height: 100vh; /* Adjusted height for encapsulation */
-    width: 100vw; /* Set width to 90% of the viewport */
-    border-radius: 0px; /* Rounded corners for violet box */
+    height: 100vh;
+    width: 100vw;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Sidebar styling */
 .sidebar {
     background-color: #b59de4;
-    width: 20%; /* Sidebar takes 20% of the container */
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    transition: left 0.3s ease;
 }
 
 .profile {
@@ -47,11 +47,6 @@ body {
     height: 100px;
     border-radius: 50%;
     margin-bottom: 15px;
-}
-
-.sidebar h2 {
-    color: white;
-    font-size: 1.5em;
 }
 
 nav {
@@ -71,14 +66,14 @@ nav ul li {
 nav ul li a {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the text inside the buttons */
+    justify-content: center;
     padding: 20px;
     background-color: #ece8f6;
     color: black;
     text-decoration: none;
     border-radius: 15px;
     font-size: 1.2em;
-    width: 100%; /* Full width in the sidebar */
+    width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -92,15 +87,16 @@ nav ul li a:hover {
     background-color: #c3a6f0;
 }
 
-/* Main wrapper (blue container) */
+/* Main wrapper */
 .main-wrapper {
-    width: 100%; /* Main content takes 80% of the container */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #9ee1f3; /* Light blue background */
+    background-color: #9ee1f3;
     border-radius: 30px;
-    padding: 30px; /* Add padding for better spacing */
-    box-sizing: border-box;   
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* Header (search bar) */
@@ -115,15 +111,14 @@ nav ul li a:hover {
 .search-bar {
     display: flex;
     align-items: center;
-    width: 65%; /* Adjust width for the search bar */
-    justify-content: center; /* Align the search bar to the left */
-    margin-right: auto; /* Push the search bar to the left */
+    width: 65%;
+    justify-content: center;
+    margin-right: auto;
 }
 
 .search-bar input {
     width: 90%;
     padding: 10px;
-    border: none;
     border-radius: 30px;
 }
 
@@ -189,4 +184,53 @@ nav ul li a:hover {
 
 .product-item p {
     font-size: 1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+    .search-bar {
+        padding: 5px;
+
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.expanded {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .main-wrapper.shifted {
+        margin-left: 250px;
+    }
+
+    .product-item {
+        width: 100%;
+    }
 }

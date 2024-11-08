@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/cart_cus.css">
 </head>
 <body>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -62,6 +63,10 @@
     </div>
     <!-- Add this script just before the closing </body> tag -->
 <script>
+     function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('expanded');
+            document.querySelector('.main-wrapper').classList.toggle('shifted');
+        }
     // Grab all the buy buttons
     const buyButtons = document.querySelectorAll('.buy-btn');
 
