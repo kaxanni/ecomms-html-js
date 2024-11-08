@@ -1,4 +1,4 @@
-/* General Styling */
+/* General styling */
 * {
     margin: 0;
     padding: 0;
@@ -14,26 +14,26 @@ body {
     height: 100vh;
 }
 
-/* Container encapsulating the sidebar and the blue dashboard area */
+/* Container */
 .container {
     display: flex;
     flex-direction: row;
     background-color: #b59de4;
-    height: 100vh; /* Adjusted height for encapsulation */
-    width: 100vw; /* Set width to 90% of the viewport */
-    border-radius: 0px; /* Rounded corners for violet box */
+    height: 100vh;
+    width: 100vw;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar Styling */
+/* Sidebar styling */
 .sidebar {
     background-color: #b59de4;
-    width: 20%; /* Sidebar takes 20% of the container */
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    transition: left 0.3s ease;
 }
 
 .profile {
@@ -48,7 +48,6 @@ body {
     border-radius: 50%;
     margin-bottom: 15px;
 }
-
 .sidebar h2 {
     color: white;
     font-size: 1.5em;
@@ -70,8 +69,8 @@ nav ul li {
 
 nav ul li a {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     background-color: #ece8f6;
     color: black;
@@ -92,7 +91,7 @@ nav ul li a:hover {
     background-color: #c3a6f0;
 }
 
-/* Main content area */
+/* Main wrapper */
 .main-wrapper {
     width: 100%;
     background-color: #9ee1f3;
@@ -107,7 +106,6 @@ nav ul li a:hover {
     flex-direction: column;
     gap: 20px;
 }
-
 .dashboard-section {
     background-color: #ece8f6;
     padding: 20px;
@@ -115,4 +113,49 @@ nav ul li a:hover {
     border-radius: 15px;
     font-size: 1.5em;
     font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.expanded {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .main-wrapper.shifted {
+        margin-left: 250px;
+    }
+
+    .dashboard-section {
+        width: 100%;
+    }
 }

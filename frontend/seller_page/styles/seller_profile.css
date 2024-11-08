@@ -92,9 +92,11 @@ nav ul li a:hover {
     background-color: #c3a6f0;
 }
 
-/* Main content area */
+/* Main content area styling */
 .main-wrapper {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #9ee1f3;
     border-radius: 30px;
     padding: 30px;
@@ -102,70 +104,71 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Logout Button */
-.logout {
-    display: flex;
-    justify-content: flex-end;
+/* Logout button styling */
+.logout button {
+    padding: 10px 20px;
+    background-color: #e0d4f9;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
-.logout button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #b59de4;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
 .logout button:hover {
-    background-color: #a58bd2;
+    background-color: #d4c4ff;
 }
 
 /* Profile content sections */
 .profile-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
+    gap: 30px;
 }
 
-/* Business Information Section */
-.info-section {
+.info-section, .billing-subscription, .location-section {
     background-color: #ece8f6;
     padding: 20px;
-    width: 100%;
-    text-align: center;
-    border-radius: 15px;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-top: 40px;
+    border-radius: 10px;
 }
 
-/* Billing and Subscription Sections */
-.billing-subscription {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
 
-.billing-section, .subscription-section {
-    background-color: #ece8f6;
-    padding: 20px;
-    width: 48%;
-    text-align: center;
-    border-radius: 15px;
-    font-size: 1.5em;
-    font-weight: 500;
-}
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
 
-/* Store Location Section */
-.location-section {
-    background-color: #ece8f6;
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    font-size: 1.5em;
-    font-weight: 500;
+    .sidebar.expanded {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .main-wrapper.shifted {
+        margin-left: 250px;
+    }
 }

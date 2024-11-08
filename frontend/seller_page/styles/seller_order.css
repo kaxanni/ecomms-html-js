@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Make sure body takes the full screen height */
+    height: 100vh; /* Ensure the body fills the screen height */
 }
 
 /* Violet container encapsulating the blue content */
@@ -19,17 +19,16 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #b59de4;
-    height: 100vh; /* Adjusted height for encapsulation */
-    width: 100vw; /* Set width to 90% of the viewport */
-    border-radius: 0px; /* Rounded corners for violet box */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Depth effect */
 }
 
 /* Sidebar styling */
 .sidebar {
     background-color: #b59de4;
-    width: 20%; /* Sidebar takes 20% of the container */
+    width: 20%; /* Sidebar takes 20% width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,14 +70,14 @@ nav ul li {
 nav ul li a {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the text inside the buttons */
+    justify-content: center; /* Centering text inside the buttons */
     padding: 20px;
     background-color: #ece8f6;
     color: black;
     text-decoration: none;
     border-radius: 15px;
     font-size: 1.2em;
-    width: 100%; /* Full width in the sidebar */
+    width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -101,12 +100,13 @@ nav ul li a:hover {
     box-sizing: border-box;
 }
 
-/* Order Sections */
+/* Order Content Styling */
 .order-content {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     height: 100%;
+   
 }
 
 .order-section {
@@ -120,4 +120,62 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.expanded {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        margin-left: 0;
+        overflow-y: auto;
+    }
+
+    .main-wrapper.shifted {
+        margin-left: 250px;
+    }
+
+    .order-section h3 {
+        font-size: 1.2em; /* Adjust heading size for smaller screens */
+        padding: 10px;
+    }
+    .order-section{
+        width: 65%;
+    }
+    .order-content{
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+        flex-direction: column;
+    }
 }

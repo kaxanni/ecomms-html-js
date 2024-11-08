@@ -14,7 +14,7 @@ body {
     height: 100vh; /* Make sure body takes the full screen height */
 }
 
-/* Violet container encapsulating the blue content */
+/* Container */
 .container {
     display: flex;
     flex-direction: row;
@@ -103,14 +103,12 @@ nav ul li a:hover {
     flex-direction: row;
 }
 
-/* Product content */
+/* Product Content */
 .product-content {
     display: flex;
     width: 100%;
     gap: 20px;
 }
-
-/* Inventory Level Section */
 .inventory-section {
     background-color: #ece8f6;
     padding: 20px;
@@ -123,7 +121,6 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
-
 /* Side Sections */
 .side-sections {
     display: flex;
@@ -142,4 +139,53 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}  
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.expanded {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .main-wrapper.shifted {
+        margin-left: 250px;
+    }
+
+    .side-sections {
+        flex-direction: column;
+    }
+
+    .side-section {
+        width: 100%; /* Make side-sections stack vertically on small screens */
+    }
 }

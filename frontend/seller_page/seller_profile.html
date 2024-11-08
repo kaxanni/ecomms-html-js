@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller Profile Page</title>
-    <link rel="stylesheet" href="/seller_page/styles/seller_profile.css">
+    <link rel="stylesheet" href="/frontend/seller_page/styles/seller_profile.css">
 </head>
 <body>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -16,10 +17,10 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="/seller_dashboard">Dashboard</a></li>
-                    <li><a href="/seller_order">Order</a></li>
-                    <li><a href="/seller_product">Products</a></li>
-                    <li><a href="/seller_profile" class="active">Me</a></li>
+                    <li><a href="seller_dashboard.html">Dashboard</a></li>
+                    <li><a href="seller_order.html">Order</a></li>
+                    <li><a href="seller_product.html">Products</a></li>
+                    <li><a href="#" class="active">Me</a></li>
                 </ul>
             </nav>
         </div>
@@ -52,5 +53,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('expanded');
+            document.querySelector('.main-wrapper').classList.toggle('shifted');
+        }
+    </script>
 </body>
 </html>
