@@ -182,4 +182,69 @@ router.delete('/delete-product/:id', async (req, res) => {
     }
 });
 
+// Route to fetch all products for the customer's shop page
+router.get('/get-all-products', async (req, res) => {
+    try {
+        const { data, error } = await supabase
+            .from('products')
+            .select('id, product_name, description, quantity, price, image_url');
+
+        if (error) throw error;
+
+        const productsWithPlaceholder = data.map(product => ({
+            ...product,
+            image_url: product.image_url || 'https://via.placeholder.com/150' // Set placeholder if no image URL
+        }));
+
+        res.status(200).json(productsWithPlaceholder);
+    } catch (error) {
+        console.error('Error fetching products:', error.message);
+        res.status(500).json({ error: 'Failed to retrieve products' });
+    }
+});
+
+// Route to add a product to the cart
+router.post('/cart/add', async (req, res) => {
+    const { productId } = req.body;
+    const userId = req.session.userId;
+
+    if (!userId) {
+        return res.status(403).json({ error: 'Unauthorized access. Please log in.' });
+    }
+
+    try {
+        const { data, error } = await supabase
+            .from('cart')
+            .insert({ user_id: userId, product_id: productId });
+
+        if (error) throw error;
+        res.status(200).json({ message: 'Product added to cart successfully' });
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        res.status(500).json({ error: 'Failed to add product to cart' });
+    }
+});
+
+// Route to add a product to the wishlist
+router.post('/wishlist/add', async (req, res) => {
+    const { productId } = req.body;
+    const userId = req.session.userId;
+
+    if (!userId) {
+        return res.status(403).json({ error: 'Unauthorized access. Please log in.' });
+    }
+
+    try {
+        const { data, error } = await supabase
+            .from('wishlist')
+            .insert({ user_id: userId, product_id: productId });
+
+        if (error) throw error;
+        res.status(200).json({ message: 'Product added to wishlist successfully' });
+    } catch (error) {
+        console.error('Error adding to wishlist:', error);
+        res.status(500).json({ error: 'Failed to add product to wishlist' });
+    }
+});
+
 export default router;

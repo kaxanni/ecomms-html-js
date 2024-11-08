@@ -6,6 +6,7 @@ import authSignupRouter from './backend/auth.js';
 import authLoginRouter from './backend/authLogin.js';
 import productRoutes from './backend/productRoutes.js';
 import session from 'express-session'; // Import express-session
+import businessRoutes from './backend/businessRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,7 +28,8 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.use('/auth/signup', authSignupRouter);
 app.use('/auth', authLoginRouter);
-app.use('/products', productRoutes); // Product routes without token check
+app.use('/products', productRoutes); // Product routes
+app.use('/business', businessRoutes); //Add business route
 
 // Customer pages
 app.get('/customer_home', (req, res) => {
