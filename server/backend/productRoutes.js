@@ -182,12 +182,13 @@ router.delete('/delete-product/:id', async (req, res) => {
     }
 });
 
-// Route to fetch all products for the customer's shop page
+// Route to fetch all products for the customer's shop page with business name
 router.get('/get-all-products', async (req, res) => {
     try {
         const { data, error } = await supabase
             .from('products')
-            .select('id, product_name, description, quantity, price, image_url');
+            .select('id, product_name, description, quantity, price, image_url, users (company_name)')
+            .eq('users.account_type', 'business'); // Ensure it's a business account
 
         if (error) throw error;
 
@@ -202,6 +203,7 @@ router.get('/get-all-products', async (req, res) => {
         res.status(500).json({ error: 'Failed to retrieve products' });
     }
 });
+
 
 // Route to add a product to the cart
 router.post('/cart/add', async (req, res) => {
@@ -227,23 +229,40 @@ router.post('/cart/add', async (req, res) => {
 
 // Route to add a product to the wishlist
 router.post('/wishlist/add', async (req, res) => {
-    const { productId } = req.body;
-    const userId = req.session.userId;
-
-    if (!userId) {
-        return res.status(403).json({ error: 'Unauthorized access. Please log in.' });
-    }
+    const { productId, userId } = req.body;
 
     try {
+        // Fetch product and business details
+        const { data: productData, error: productError } = await supabase
+            .from('products')
+            .select('product_name, price, seller_id, users (company_name)')
+            .eq('id', productId)
+            .single();
+
+        if (productError || !productData) {
+            throw new Error('Product not found');
+        }
+
+        // Prepare wishlist entry data
+        const wishlistEntry = {
+            user_id: userId,
+            product_id: productId,
+            product_name: productData.product_name,
+            price: productData.price,
+            business_owner: productData.users.company_name,
+        };
+
+        // Insert into wishlist
         const { data, error } = await supabase
             .from('wishlist')
-            .insert({ user_id: userId, product_id: productId });
+            .insert(wishlistEntry);
 
         if (error) throw error;
-        res.status(200).json({ message: 'Product added to wishlist successfully' });
+
+        res.status(200).json({ message: 'Product added to wishlist', wishlist: data });
     } catch (error) {
-        console.error('Error adding to wishlist:', error);
-        res.status(500).json({ error: 'Failed to add product to wishlist' });
+        console.error('Error adding to wishlist:', error.message);
+        res.status(500).json({ error: 'Failed to add to wishlist' });
     }
 });
 

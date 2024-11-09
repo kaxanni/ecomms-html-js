@@ -7,6 +7,8 @@ import authLoginRouter from './backend/authLogin.js';
 import productRoutes from './backend/productRoutes.js';
 import session from 'express-session'; // Import express-session
 import businessRoutes from './backend/businessRoutes.js';
+import cartRoutes from "./backend/cartRoutes.js";
+import wishlistRoutes from "./backend/wishlistRoutes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,7 +17,7 @@ const app = express();
 
 // Configure express-session middleware
 app.use(session({
-    secret: process.env.KEY_SECRET,       // Replace with a strong secret key
+    secret: process.env.KEY_SECRET,  
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }         // Set to true if using HTTPS
@@ -30,6 +32,8 @@ app.use('/auth/signup', authSignupRouter);
 app.use('/auth', authLoginRouter);
 app.use('/products', productRoutes); // Product routes
 app.use('/business', businessRoutes); //Add business route
+app.use("/cart", cartRoutes);
+app.use("/wishlist", wishlistRoutes);
 
 // Customer pages
 app.get('/customer_home', (req, res) => {
